@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+	<head>
+		<link rel="stylesheet" type="text/css" href="game.css">
+		<script src="game.js"> </script>
+	    <title>Rock Paper Scissors</title>
+	</head>
+
+	<body>
+
+		<h1>Rock Paper Scissors</h1>
+
+		<p id="user"> </p>
+
+		<h3>Player: </h3>
+
+		<div id="options">
+			<input type="radio" id="Rock" name="options" value="Rock">
+			<label for="rock">Rock</label><br>
+			<input type="radio" id="Paper" name="options" value="Paper">
+			<label for="paper">Paper</label><br>
+			<input type="radio" id="Scissors" name="options" value="Scissors">
+			<label for="scissors">Scissors</label><br>
+		</div>
+
+		<div id="play">
+	    	<input type="button" value="Play" onclick="compare(userChoice(), play())"> <br>
+	    </div>
+
+	    <h3>Computer: </h3> <p id="compAnswer"></p>
+	    
+	    <h4>Result: </h4> <p id="results"></p>
+
+	    <h4>Player Score: </h4> <p id="playerscore"></p>
+	    <h4>Computer Score: </h4> <p id="compscore"></p>
+
+	    <h4>Play Count: </h4> <p id="playcount"></p>
+	    
+	    <h4>Player Rock: </h4> <p id="userrock"></p>
+	    <h4>Player Paper: </h4> <p id="userpaper"></p>
+		<h4>Player Scissors: </h4> <p id="userscissors"></p>
+
+		<h4>Computer Rock: </h4> <p id="comprock"></p>
+	    <h4>Computer Paper: </h4> <p id="comppaper"></p>
+		<h4>Computer Scissors: </h4> <p id="compscissors"></p>
+
+	</body>
+
+</html>

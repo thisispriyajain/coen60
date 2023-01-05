@@ -1,0 +1,93 @@
+<!-- Priya Jain -->
+<!-- pjain4@scu.edu -->
+
+<!DOCTYPE html>
+	<head>
+	</head>
+
+	<body>
+		<h1> COEN 60L: Lab 5 </h1>
+		<svg id = "canvas" width="1000" height="500" style="border: 1px black solid;"> </svg>
+
+		<form>
+			<input type="button" value="Add Square" onclick= "addSquare();" >
+			<input type="button" value="Change Colors" onclick= "changeColors();" >
+			<input type="button" value="Delete All" onclick= "deleteAll();" >
+		</form>
+
+		<p id="output"></p>
+
+		<script type="text/javascript">
+
+		var svg1 = document.getElementById('canvas');
+		var squareArray = new Array();
+
+		function addSquare() {
+			var output = "";
+			var sq ="<rect x="+getRandomX()+" y="+getRandomY()+" width=50 height=50 style=fill:"+getRandomColor()+"></rect>";
+			//alert(sq);			
+			squareArray.push(sq);
+			for(var i=0; i<squareArray.length; i++) {
+				
+				output += squareArray[i];
+
+			}
+
+      		document.getElementById('canvas').innerHTML = output;
+      		console.log(squareArray);
+		}
+
+		function getRandomX() {
+			return Math.floor(Math.random()*500);
+		}
+
+		function getRandomY() {
+			return Math.floor(Math.random()*250);
+		}
+
+		function changeColors() {
+			var newSquare = new Array();
+			var newOutput = "";
+			for(var i=0; i<squareArray.length; i++) {
+				let temp = squareArray[i].search("#");
+				let colorIndex = squareArray[i].substring(0, temp);
+				let newColor = colorIndex + getRandomColor() + "></rect>";
+				newSquare.push(newColor);
+			}
+
+			for(var i=0; i<newSquare.length; i++) {
+				newOutput += newSquare[i];
+			}
+			document.getElementById('canvas').innerHTML = newOutput;
+			console.log(newSquare);
+
+			// 1. search() to find "#"
+			// 2. substring() to get the color string -> substring(0, ...)
+			// 3. replace the string with a new color 
+		}
+
+		function getRandomColor() {
+			var hexadecimal = "0123456789abcdef";	
+			var colorStr ="";
+
+			for(var i=0;i<6;i++){
+				//random index 0~15 value
+				var random = 15 * Math.random();  //0.0001~15.99999
+
+				var index = Math.floor( random ); //0~15
+				colorStr+=hexadecimal[index];
+			}
+ 
+			return "#" + colorStr;
+		}
+
+		function deleteAll(){
+			squareArray = new Array();
+			document.getElementById('canvas').innerHTML = "";
+		}
+
+		</script>
+
+	</body>
+
+</html>

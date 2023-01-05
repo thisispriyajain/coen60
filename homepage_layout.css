@@ -1,0 +1,46 @@
+h2 {
+	text-align: center;
+	font-family: Verdana;
+}
+
+h2:hover{
+	background-color: yellow;
+}
+
+.about{
+	background-color: white;
+	font-family: Arial;
+	border-style: solid;
+	border-color: green; 
+	text-align: center;
+	padding: 5px;
+}
+
+.food{
+	background-color: #E8FBFB;
+	font-family: Garamond;
+	border-style: solid;
+	border-color: skyblue;
+	margin-top: 10px;
+	padding: 5px;
+}
+
+.youtube{
+	background-image: url("https://cdn.wallpapersafari.com/68/16/c2hwzs.jpg");
+	font-family: Garamond;
+	border: 2px solid magenta;
+	margin-top: 10px;
+	padding: 5px;
+}
+
+#portrait {
+	align: right;
+	float: right;
+	clear: right;
+}
+
+/*#caption {
+	padding: 2x;
+	text-align: right;
+}
+*/

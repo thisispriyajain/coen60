@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+	<head>
+	</head>
+
+<body>
+	<h1 style="text-align: center;"> Lab 6 </h1>
+
+	<form name = "signup">
+		<label for="name">Name*: </label>
+  		<input type="text" id="name" name="name" required> <br>
+
+		<label for="email">Email*: </label>
+ 		<input type="email" id="email" name="email" required> <br>
+
+		<label for="phone">Phone: </label>
+  		<input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required> <br>
+
+  		<input type="submit" value="Sign Up" onclick="validateForm()">
+	</form>
+
+	<p> Which of the following professional sports teams are based in the San Francisco Bay Area? </p>
+	<form name = "sports">
+		<input type="checkbox" id="49ers" name="49ers" value="49ers">
+		<label for="49ers"> 49ers </label> <br>
+
+		<input type="checkbox" id="Warriors" name="Warriors" value="Warriors">
+		<label for="Warriors"> Warriors </label> <br>
+
+		<input type="checkbox" id="Giants" name="Giants" value="Giants">
+		<label for="Giants"> Giants </label> <br>
+
+		<input type="checkbox" id="Dodgers" name="Dodgers" value="Dodgers">
+		<label for="Dodgers"> Dodgers </label> <br>
+
+		<input type="checkbox" id="A's" name="A's" value="A's">
+		<label for="A's"> A's </label> <br>
+
+		<input type="checkbox" id="Sharks" name="Sharks" value="Sharks">
+		<label for="Sharks"> Sharks </label> <br>
+
+		<input type="submit" value="Check Correctness" onclick="sportsForm()">
+	</form>
+
+	<script type="text/javascript">
+		function validateForm() {
+
+			console.log("Print");
+
+  			let name = document.forms["signup"]["name"].value;
+  			let email = document.forms["signup"]["email"].value;
+  			let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+  			if (name == "") {
+  				alert("Name must be filled out.");
+    			return false;
+  			}
+  			else if (email == "") {
+  				alert("Email must be filled out.");
+    			return false;
+  			}
+  			else if (emailPattern == false) {
+  				alert("The email inputted is written in an illegal format.");
+  			}
+  			else {
+  				alert("All information is validated.");
+  			}
+  		}
+
+  		function sportsForm() {
+			if(document.getElementById("Dodgers").checked == true) {
+				alert("This choice is incorrect.")
+			}
+			else if(document.getElementById("49ers").checked == true && document.getElementById("Warriors").checked == true && document.getElementById("Giants").checked == true && document.getElementById("A's").checked == true && document.getElementById("Sharks").checked == true) {
+				alert("That is correct.")
+			}
+			else {
+				alert("It's partially correct")
+			}
+		}
+
+	</script>
+
+</body>
+
+</html>

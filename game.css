@@ -1,0 +1,16 @@
+body {
+	background-color: lavender;
+}
+
+h1{
+	text-align: center;
+	color: deeppink;
+}
+
+.options{
+	padding: 5px;
+}
+
+.play{
+	padding: 5px;
+}

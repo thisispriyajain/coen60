@@ -1,0 +1,44 @@
+body {
+	background-color: white;
+}
+
+.title{
+	text-align: center;
+	color: dodgerblue;
+}
+
+.intro{
+	text-align: left;
+	color: slateblue;
+}
+
+.orgs{
+	text-align: left;
+	color: violet;
+}
+
+figure{
+	float: right;
+	clear: right;
+}
+
+fig-caption{
+	caption-side: top;
+	text-align: center;
+}
+
+.link1:hover{
+	background-color: tomato;
+}
+
+.link2:hover{
+	background-color: orange;
+}
+
+.link3:hover{
+	background-color: yellow;
+}
+
+.link4:hover{
+	background-color: mediumseagreen;
+}
